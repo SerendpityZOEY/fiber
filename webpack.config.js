@@ -50,25 +50,30 @@ module.exports = {
   },
   //settings of normal modules
   module: {
+    //put automatically applied loaders in an array
     loaders: [
+        //first loader
       {
-        test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
-        exclude: /node_modules/,
-        include: [path.join(__dirname,'./lib')]
+        test: /\.js$/, //file must has extension with .js
+        loaders: ['react-hot', 'babel'], //the loader
+        exclude: /node_modules/, //the loader can't be under dir of ~/fiber/node_modules
+        include: [path.join(__dirname,'./lib')] //the dir must be ~/fiber/lib
       },
+        //second loader
       {
-        test: /\.xml$/,
-        loader: "raw"
+        test: /\.xml$/, //file must has extension with .xml
+        loader: "raw" //the loader
       },
+        //third loader
       {
-        test: /\.json$/,
-        loaders: ['json-loader']
+        test: /\.json$/, //file must has extension with .json
+        loaders: ['json-loader'] //the loader
       },
+        //forth loader
       {
-        test: /\.css?$/,
-        loaders: ['style', 'raw'],
-        include: __dirname
+        test: /\.css?$/, //file must has extension with .css
+        loaders: ['style', 'raw'], //the loader
+        include: __dirname //the dir must be ~/fiber
       }]
   }
 };
